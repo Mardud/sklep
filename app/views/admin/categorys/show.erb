@@ -1,0 +1,30 @@
+<p>
+  <strong>Category Title:</strong>
+  <%= @category.title %>
+</p>
+
+<h2>Produkty</h2>
+<%= render @category.products %>
+
+<h2>Dodaj Produkt:</h2>
+<%= form_for([@category, @category.products.build]) do |f| %>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </p>
+    <p>
+      <%= f.label :price %><br />
+      <%= f.text_field :price %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
+
+<%= link_to 'Back', admin_categorys_path %>

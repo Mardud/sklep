@@ -1,0 +1,24 @@
+<h1>Kategorie</h1>
+
+<table>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @categorys.each do |category| %>
+      <tr>
+      <td><%= link_to category.title, admin_category_path(category) %></td>
+       <td><%= link_to 'Destroy', admin_category_path(category),
+                        method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
+<td>
+  <th>
+  </th>
+</td>
+<tr>
+</tr>
+<%= link_to 'Nowa kategoria', new_admin_category_path %>

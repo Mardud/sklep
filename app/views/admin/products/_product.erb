@@ -1,0 +1,19 @@
+<p>
+  <strong>Produkt</strong>
+  <%= product.name %>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+  <%= product.description %>
+</p>
+<p>
+  <strong>Cena:</strong>
+  <%= product.price %>
+</p>
+
+<p>
+  <%= link_to 'Usuń produkt', [product.category, product],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>
